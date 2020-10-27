@@ -19,3 +19,5 @@ const Profile = ({ username }) => {
 }
 
 const Greeting = ({ username }) => <p>{`${username}님 안녕하세요!`}</p>
+
+export default App;
