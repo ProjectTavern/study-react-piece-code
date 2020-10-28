@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 const UserContext = React.createContext();
 const user = { name: "Mike", age: 23 };
@@ -12,17 +12,12 @@ const ParentComponent = () => {
 }
 
 const ChildComponent = () => {
+  const user = useContext(UserContext);
   // ...
   return (
     <div>
-      <UserContext.Consumer>
-        {user => (
-          <React.Fragment>
-            <p>name is {user.name}</p>
-            <p>age is {user.age}</p>
-          </React.Fragment>
-        )}
-      </UserContext.Consumer>
+      <p>name is {user.name}</p>
+      <p>age is {user.age}</p>
     </div>
   )
 }
